@@ -12,6 +12,61 @@
 
 using namespace std;
 
+namespace str
+{
+namespace conversion
+{
+char* intToStr(int i)
+{
+    // -1234 -> "4321 with - sign" -> reverse -> "-1234"
+
+    // find out the length
+    bool isNega = (i < 0);
+    int abs = (isNega ? i * -1 : i);
+    int len = (abs == 0 ? 1 : 0);
+    int tmp = abs;
+    while (tmp)
+    {
+        tmp /= 10;
+        len++;
+    }
+    if (isNega)
+        len++;
+
+    std::cout << "string_questions.hpp - intToStr - len: " << len << endl;
+
+    // copy digit in reverse order
+    char* str = NULL;
+    char buf[100] =
+    { 0 };
+    str = (false ? buf : (char *) calloc(len++, sizeof(char)));
+
+    char* strStart = str;
+    tmp = abs;
+    int remainder;
+    while (tmp)
+    {
+        remainder = tmp % 10;
+        *str = ('0' + remainder);
+        tmp /= 10;
+        str++;
+    }
+
+    if (isNega)
+    {
+        *str++ = '-';
+    }
+
+    strStart = strrev(strStart);
+
+    std::cout << "string_questions.hpp - intToStr - len: " << len << endl;
+    std::cout << "string_questions.hpp - intToStr - strStart: " << strStart << endl;
+
+    return strStart;
+}
+}  // namespace conversion
+}  // namespace str
+
 /* "tetris" returns 'e' */
 char FirstNonRepetitiveChar(const char* string)
 {

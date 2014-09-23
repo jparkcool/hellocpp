@@ -99,9 +99,18 @@ void test_FirstNonRepetitiveChar()
     printf("\n test_FirstNonRepetitiveChar: %c", fchar);
 }
 
+void test_intToStr()
+{
+    char* intToStr = str::conversion::intToStr(-1234);
+    std::cout << "hellocpp.cpp - test_intToStr: " << intToStr << endl;
+}
+
 int main()
 {
-    test_FirstNonRepetitiveChar();
+//    test_FirstNonRepetitiveChar();
 //    test_RemoveCharsInChar();
+
+    test_intToStr();
+
     return 0;
 }
