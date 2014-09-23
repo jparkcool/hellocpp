@@ -18,6 +18,7 @@
 
 #include "ptr/CallerTest.h"
 #include "cracking/searching/searching.hpp"
+#include "cracking/string/string_questions.hpp"
 
 using namespace std;
 using namespace std_test;
@@ -65,19 +66,42 @@ void test_(char** buf)
     }
 }
 
-int main()
+void testBinMul()
 {
-//    char *str = (char *) calloc(10, sizeof(char));
-//    char *nil = NULL;
-//    strcpy(str, "alskdjflksdf;");
-//    test_(&nil);
-
+    //    char *str = (char *) calloc(10, sizeof(char));
+    //    char *nil = NULL;
+    //    strcpy(str, "alskdjflksdf;");
+    //    test_(&nil);
     int tab[2][4] =
     {
     { 1, 2, 4, 7 },
     { 10, 11, 13, 16 } };
     int i = binSearchOnMultiArray(tab, 1, 0, 7);
-
     printf("\ndone: %d", i);
+}
+
+void test_RemoveCharsInChar()
+{
+    char* str2 = (char*) (calloc(100, sizeof(char)));
+    strcpy(str2, "Battle of the Vowels: Hawaii vs. Grozny");
+    RemoveCharsInChar(str2, "aeiou");
+    printf("\n RemoveCharsInChar: %s", str2);
+}
+
+void test_FirstNonRepetitiveChar()
+{
+    //    char *str = (char *) calloc(10, sizeof(char));
+    //    char *nil = NULL;
+    //    strcpy(str, "alskdjflksdf;");
+    //    test_(&nil);
+    const char* str = "tetris";
+    char fchar = FirstNonRepetitiveChar(str);
+    printf("\n test_FirstNonRepetitiveChar: %c", fchar);
+}
+
+int main()
+{
+    test_FirstNonRepetitiveChar();
+//    test_RemoveCharsInChar();
     return 0;
 }
