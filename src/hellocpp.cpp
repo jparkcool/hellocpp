@@ -19,6 +19,8 @@
 #include "ptr/CallerTest.h"
 #include "cracking/searching/searching.hpp"
 #include "cracking/string/string_questions.hpp"
+#include "cracking/recursion/recursion.hpp"
+#include "cracking/sorting/sorting.hpp"
 
 using namespace std;
 using namespace std_test;
@@ -103,14 +105,27 @@ void test_intToStr()
 {
     char* intToStr = str::conversion::intToStr(-1234);
     std::cout << "hellocpp.cpp - test_intToStr: " << intToStr << endl;
+
+    int strToInt = StrToInt("-1234");
+    std::cout << "hellocpp.cpp - strToInt: " << strToInt << endl;
 }
 
 int main()
 {
 //    test_FirstNonRepetitiveChar();
 //    test_RemoveCharsInChar();
+//    test_intToStr();
+//    fiboRecur(10);
 
-    test_intToStr();
+    int listA[100] =
+    { 1, 3, 5 };
+
+    int listB[3] =
+    { 2, 4, 6 };
+
+    mergeSortedLists(listA, 3, listB, 3);
+
+    std::cout << "hellocpp.cpp - main - end" << endl;
 
     return 0;
 }

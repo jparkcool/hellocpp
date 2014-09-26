@@ -67,6 +67,33 @@ char* intToStr(int i)
 }  // namespace conversion
 }  // namespace str
 
+//"-1234" to -1234
+int StrToInt(const char* str)
+{
+    if (!str)
+        return -1; // or define ERR_NO and return it
+
+//    if (!isNum(str)) {
+//        // check NULL, non-number and so on
+//        return ERR_NO;
+//    }
+
+    bool isNeg = (*str == '-');
+    if (isNeg)
+    {
+        str++;
+    }
+
+    int ret = 0;
+    while (*str)
+    {
+        ret = ret * 10 + (*str - '0');
+        str++;
+    }
+
+    return (isNeg ? ret * -1 : ret);
+}
+
 /* "tetris" returns 'e' */
 char FirstNonRepetitiveChar(const char* string)
 {
@@ -137,5 +164,35 @@ char* RemoveCharsInChar(char* str, const char* remove)
 
     return str;
 }
+
+/*
+ Write a program to reverse a string without using strrev function in c?
+ Write a program to reverse a string without using strrev function in c?
+ Write a program to reverse a string without using strrev function in c?
+ Write a program to reverse a string without using strrev function in c?
+
+ Write a program to reverse a string without using strrev function in c?
+ Write a program to reverse a string without using strrev function in c?
+ Write a program to reverse a string without using strrev function in c?
+ Write a program to reverse a string without using strrev function in c?Write a program to reverse a string without using strrev function in c?
+ Write a program to reverse a string without using strrev function in c?
+ Write a program to reverse a string without using strrev function in c?
+ Write a program to reverse a string without using strrev function in c?Write a program to reverse a string without using strrev function in c?
+ Write a program to reverse a string without using strrev function in c?
+ Write a program to reverse a string without using strrev function in c?
+ Write a program to reverse a string without using strrev function in c?Write a program to reverse a string without using strrev function in c?
+ Write a program to reverse a string without using strrev function in c?
+ Write a program to reverse a string without using strrev function in c?
+ Write a program to reverse a string without using strrev function in c?Write a program to reverse a string without using strrev function in c?
+ Write a program to reverse a string without using strrev function in c?
+ Write a program to reverse a string without using strrev function in c?
+ Write a program to reverse a string without using strrev function in c?Write a program to reverse a string without using strrev function in c?
+ Write a program to reverse a string without using strrev function in c?
+ Write a program to reverse a string without using strrev function in c?
+ Write a program to reverse a string without using strrev function in c?Write a program to reverse a string without using strrev function in c?
+ Write a program to reverse a string without using strrev function in c?
+ Write a program to reverse a string without using strrev function in c?
+ Write a program to reverse a string without using strrev function in c?
+ */
 
 #endif /* STRING_QUESTIONS_HPP_ */
